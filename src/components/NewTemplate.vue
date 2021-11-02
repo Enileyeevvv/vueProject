@@ -1,3 +1,17 @@
+<script>
+
+export default {
+  props: {
+    item: {
+      type: Object,
+      required: true,
+    },
+  },
+  name: "New",
+};
+
+</script>
+
 <template>
   <router-link
     class="news-link"
@@ -10,18 +24,6 @@
     </div>
   </router-link>
 </template>
-
-<script>
-export default {
-  props: {
-    item: {
-      type: Object,
-      required: true,
-    },
-  },
-  name: "New",
-};
-</script>
 
 <style scoped>
 .news-card {

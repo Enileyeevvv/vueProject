@@ -10,16 +10,17 @@ export default {
       articles: null,
       colors: [
         'indigo',
-        'warning',
-        'pink darken-2',
         'indigo',
-        'warning',
-        'pink darken-2',
+        'indigo',
+        'indigo',
+        'indigo',
+        'indigo',
       ],
       name: 'Пользователь',
       news: null,
       }
   },
+
   mounted(){
     axios
       .get('http://demo-api.vsdev.space/api/articles')
@@ -39,32 +40,21 @@ export default {
 </script>
 
 <template>
-<div>
-  <v-carousel
-    cycle
-    height="500"
-    hide-delimiter-background
-    show-arrows-on-hover
-    >
-    <v-carousel-item
-        v-for="(article, i) in articles"
-        :key="i"
-        >
-      <v-sheet
-        :color="colors[i]"
-        height="100%"
-      >
-        <v-row
-          class="fill-height"
-          align="center"
-          justify="center"
-        >
-          <div class="text-h2">
-            {{ article }}
-          </div>
-        </v-row>
-      </v-sheet>
-    </v-carousel-item>
-  </v-carousel>
-</div>
+  <div>
+    <v-carousel height="500" cycle hide-delimiter-background show-arrows-on-hover>
+      <v-carousel-item v-for="(article, i) in articles" :key="i">
+        <v-sheet :color="colors[i]" height="100%">
+          <v-row class="fill-height" align="center" justify="center">
+            <div class="text-h2">
+              {{ article }}
+            </div>
+          </v-row>
+        </v-sheet>
+      </v-carousel-item>
+    </v-carousel>
+  </div>
 </template>
+
+<style scoped>
+
+</style>>

@@ -1,10 +1,3 @@
-<template>
-  <div class="home">
-    <Header name = "Home page"/>
-    <Slider/>
-  </div>
-</template>
-
 <script>
 
 import Header from '../components/Header.vue';
@@ -18,4 +11,23 @@ export default {
     Slider,
   },
 }
+
 </script>
+
+<template>
+  <div class="home">
+    <Header name = "Home page"/>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="slider-inner">
+      <Slider/>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+
+</style>
