@@ -21,7 +21,7 @@ export default {
             </div>
           <router-view/>
           <div class="search">
-            <input class="search-input" type="text" value="   Поиск:">
+            <input class="search-input" type="text">
             <button class="search-btn">
               <img class="search-img" src="../pic/magnifier.svg">
             </button>
@@ -68,6 +68,7 @@ img {
 .search-input{
   height: 25px;
   border: 3px solid black;
+  outline: none;
   border-radius: 15px;
 }
 

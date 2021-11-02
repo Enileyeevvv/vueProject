@@ -1,5 +1,6 @@
 <template>
 <div class="wrapper">
+  {{ info }}
   <v-app>
     <v-main>
       <router-view/>
@@ -13,10 +14,13 @@
 export default {
   name: 'App',
 
-  data: () => ({
-    
-  }),
-}
+  data() {
+    return {
+      info: null
+    };
+  },
+};
+
 </script>
 
 <style scoped>
