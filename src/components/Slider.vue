@@ -19,12 +19,12 @@ export default {
       }
   },
 
-  mounted(){
+  created(){
     axios
       .get ('http://demo-api.vsdev.space/api/articles')
       .then (
         response => (
-          this.articles = response.data.map (
+          this.articles = response.data.filter (el => el.slider === true).map(
             el => {
               let len = el.name.split("").length
               if (len > 30) {

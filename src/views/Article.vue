@@ -4,23 +4,23 @@ import Header from '../components/Header.vue';
 import axios from "axios";
 
 export default {
-  name: 'News',
+  name: 'Article',
   components: {
     Header,
   },
 
   data() {
     return {
-      articles: null,
+      article: null,
     }
   },
 
-  mounted(){
+  created(){
     axios
-      .get ('http://demo-api.vsdev.space/api/articles')
+      .get ('http://demo-api.vsdev.space/api/articles/' + this.$route.params.id)
       .then (
         response => (
-          this.articles = response.data
+          this.article = response.data
         )
       )
     },
@@ -33,7 +33,7 @@ export default {
     <br><br><br><br><br>
     <div class="wrapper">
         <article class="article">
-            <h2>{{article.name}}</h2>
+          <h2>{{article.name}}</h2>
         </article>
     </div>
   </div>

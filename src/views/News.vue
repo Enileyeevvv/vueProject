@@ -15,7 +15,7 @@ export default {
     }
   },
 
-  mounted(){
+  created(){
     axios
       .get ('http://demo-api.vsdev.space/api/articles')
       .then (
@@ -35,7 +35,7 @@ export default {
       <div class="articles__list">
         <div class="article__item" v-for="article in articles" :key="article">
           <article class="article">
-            <img :src="'../pic/news/' + 'preview_2.jpg'" :alt="article.name">
+            <img :src="'/news/' + article.preview_image" :alt="article.name">
             <h2>{{article.name}}</h2>
             <p>{{article.shortDesc}}</p>
             <router-link :to="'/news/' + article.id">Посмотреть</router-link>
@@ -50,16 +50,23 @@ export default {
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 .article {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   border-radius: 10px;
   border: 2px solid black;
-  background-color: #F3F1F5;
+  background-color: white;
   margin: 50px;
-  padding: 10px
+  padding: 10px;
 }
 img {
-  width: 100px;
-  height: auto;
+  width: 250px;
+  height: 200px;
 }
 </style>
