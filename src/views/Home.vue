@@ -5,7 +5,6 @@ import Slider from '../components/Slider.vue';
 
 export default {
   name: 'Home',
-  
   components: {
     Header,
     Slider,
@@ -16,15 +15,9 @@ export default {
 
 <template>
   <div class="home">
-    <Header name = "Home page"/>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="slider-inner">
-      <Slider/>
-    </div>
+    <Header name = "Home"/>
+    <br><br><br><br><br>
+    <Slider/>
   </div>
 </template>
 

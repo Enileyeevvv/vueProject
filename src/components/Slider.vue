@@ -4,10 +4,10 @@ import axios from "axios";
 
 export default {
   name: 'Slider',
-  
   data () {
     return {
       articles: null,
+      status: null,
       colors: [
         'indigo',
         'indigo',
@@ -16,25 +16,28 @@ export default {
         'indigo',
         'indigo',
       ],
-      name: 'Пользователь',
-      news: null,
       }
   },
 
   mounted(){
     axios
-      .get('http://demo-api.vsdev.space/api/articles')
-      .then (response => (this.articles = response.data.map(el => {
-        let len = el.name.split("").length
-        if (len > 30){
-          return el.name.split("").splice(0,26) .join("") + " ..."
-        }
-        else {
-          return el.name
-        }
-      })))
+      .get ('http://demo-api.vsdev.space/api/articles')
+      .then (
+        response => (
+          this.articles = response.data.map (
+            el => {
+              let len = el.name.split("").length
+              if (len > 30) {
+                return el.name.split("").splice(0,26) .join("") + " ..."
+              }
+              else {
+                return el.name
+              }
+            }
+          )
+        )
+      )
   },
-
 }
 
 </script>

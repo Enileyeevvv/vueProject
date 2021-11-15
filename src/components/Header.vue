@@ -66,9 +66,10 @@ img {
 
 .search-input{
   height: 25px;
-  border: 3px solid black;
+  border: 2px solid black;
   outline: none;
   border-radius: 15px;
+  padding: 5px;
 }
 
 .search-btn{

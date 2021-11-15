@@ -32,16 +32,9 @@ export default {
     <Header name = "News"/>
     <br><br><br><br><br>
     <div class="wrapper">
-      <div class="articles__list">
-        <div class="article__item" v-for="article in articles" :key="article">
-          <article class="article">
-            <img :src="'../pic/news/' + 'preview_2.jpg'" :alt="article.name">
+        <article class="article">
             <h2>{{article.name}}</h2>
-            <p>{{article.shortDesc}}</p>
-            <router-link :to="'/news/' + article.id">Посмотреть</router-link>
-          </article>
-        </div>
-      </div>
+        </article>
     </div>
   </div>
 </template>
@@ -57,9 +50,5 @@ export default {
   background-color: #F3F1F5;
   margin: 50px;
   padding: 10px
-}
-img {
-  width: 100px;
-  height: auto;
 }
 </style>

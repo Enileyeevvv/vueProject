@@ -14,9 +14,7 @@ export default {
 <template>
   <div class="gallery">
     <Header name = "Gallery"/>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br><br>
     <div class="wrapper">
       <div class="gallery-inner">
         <img src="../pic/tokyo1.jpg">

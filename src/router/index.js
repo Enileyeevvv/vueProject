@@ -16,10 +16,15 @@ const routes = [
     component: () => import('../views/News.vue')
   },
   {
+    path: '/news/:id',
+    name: 'News',
+    component: () => import('../views/Article.vue')
+  },
+  {
     path: '/gallery',
     name: 'Gallery',
     component: () => import('../views/Gallery.vue')
-  }
+  },
 ]
 
 const router = new VueRouter({
