@@ -1,13 +1,11 @@
 <script>
-import Header from "../components/Header.vue";
-import Comments from "../components/Comments.vue";
 import axios from "axios";
+import CommentList from "../components/CommentList.vue";
 
 export default {
   name: "Article",
   components: {
-    Header,
-    Comments,
+    CommentList,
   },
 
   data() {
@@ -25,22 +23,8 @@ export default {
 </script>
 
 <template>
-  <div class="news">
-    <Header name="News" />
-    <br /><br /><br /><br /><br />
-    <div class="wrapper">
-      <article class="article">
-        <img
-          class="article__img"
-          :src="'/news/' + article.full_image"
-          :alt="article.name"
-        />
-        <h2 class="article__title">{{ article.name }}</h2>
-        <p class="article__date">{{ article.date }}</p>
-        <p class="article__descr">{{ article.desc }}</p>
-      </article>
-      <Comments />
-    </div>
+  <div class="comment">
+    <CommentList />
   </div>
 </template>
 
