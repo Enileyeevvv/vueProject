@@ -1,31 +1,50 @@
 <script>
 import axios from "axios";
 import CommentList from "../components/CommentList.vue";
+import AddComment from "../components/AddComment.vue";
 
 export default {
   name: "Article",
   components: {
     CommentList,
+    AddComment,
   },
 
   data() {
     return {
       article: null,
+      comments: null,
     };
+  },
+
+  methods: {
+    commentCreated(data){
+      console.log(data)
+      this.comments.push({user_name: data.user_name, comment: data.comment})
+
+    }
   },
 
   created() {
     axios
       .get("http://demo-api.vsdev.space/api/articles/" + this.$route.params.id)
       .then((response) => (this.article = response.data));
+    axios
+      .get(
+        "http://demo-api.vsdev.space/api/articles/" +
+          this.$route.params.id +
+          "/comments"
+      )
+      .then((response) => (this.comments = response.data));
   },
 };
 </script>
 
 <template>
-  <div class="comment">
-    <CommentList />
-  </div>
+    <div class="comments">
+      <CommentList v-bind:comments="this.comments" />
+      <AddComment v-on:commentCreated="commentCreated"/>
+    </div>
 </template>
 
 <style scoped>

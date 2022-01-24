@@ -1,42 +1,25 @@
 <script>
-import axios from "axios";
 
 export default {
   name: "CommentList",
   props: {
     name: String,
+    comments: Array,
   },
 
   data() {
     return {
-      comments: null,
     };
-  },
-
-  created() {
-    axios
-      .get(
-        "http://demo-api.vsdev.space/api/articles/" +
-          this.$route.params.id +
-          "/comments"
-      )
-      .then((response) => (this.comments = response.data));
   },
 };
 </script>
 
 <template>
-  <div class="wrapper">
-    <div class="comment-list">
-      <h2 class="comment-list__header">Комментарии</h2>
-      <div
-        class="comment-list__item"
-        v-for="comment in comments"
-        :key="comment"
-      >
-        <h3 class="comment-list__user-name">{{ comment.user_name }}</h3>
-        <p class="comment-list__user-comment">{{ comment.comment }}</p>
-      </div>
+  <div class="comment-list">
+    <h2 class="comment-list__header">Комментарии:</h2>
+    <div class="comment-list__item" v-for="comment in comments" :key="comment">
+      <h3 class="comment-list__user-name">{{ comment.user_name }}</h3>
+      <p class="comment-list__user-comment">{{ comment.comment }}</p>
     </div>
   </div>
 </template>
@@ -48,7 +31,6 @@ export default {
   margin: 0 auto;
 }
 .comment-list {
-  background-color: #f5f5f5;
   padding: 50px;
 }
 .comment-list__header {

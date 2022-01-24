@@ -26,7 +26,6 @@ export default {
           <router-link to="/news">News</router-link> |
           <router-link to="/gallery">Gallery</router-link>
         </div>
-        <router-view/>
         <div class="search">
           <input class="search-input" type="text">
           <button class="search-btn">

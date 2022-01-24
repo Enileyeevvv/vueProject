@@ -29,7 +29,8 @@ export default {
     <Header name="News" />
     <br /><br /><br /><br /><br />
     <div class="wrapper">
-      <article class="article">
+
+      <article v-if="article.name" class="article">
         <img
           class="article__img"
           :src="'/news/' + article.full_image"
@@ -60,6 +61,8 @@ export default {
 }
 .article__img {
   align-self: center;
+  width: 50%;
+  height: auto;
 }
 img {
   width: 500px;
