@@ -18,7 +18,7 @@ export default {
 
   created() {
     axios
-      .get("http://demo-api.vsdev.space/api/articles/" + this.$route.params.id)
+      .get("https://vue-blog-back.herokuapp.com/articles/" + this.$route.params.id)
       .then((response) => (this.article = response.data));
   },
 };

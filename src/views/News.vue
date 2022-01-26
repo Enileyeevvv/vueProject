@@ -17,7 +17,7 @@ export default {
 
   created(){
     axios
-      .get ('http://demo-api.vsdev.space/api/articles')
+      .get ('https://vue-blog-back.herokuapp.com/articles')
       .then (
         response => (
           this.articles = response.data

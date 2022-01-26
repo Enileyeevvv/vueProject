@@ -21,7 +21,7 @@ export default {
       axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
       axios
         .post(
-        `http://demo-api.vsdev.space/api/articles/${this.$route.params.id}/comments`,
+        `https://vue-blog-back.herokuapp.com/articles/${this.$route.params.id}/comments`,
           {
             user_name: this.username,
             comment: this.comment,
